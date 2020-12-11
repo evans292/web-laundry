@@ -65,6 +65,7 @@ export default {
     },
     mounted() {
         let query = location.search.split('query=')[1];
+        console.log(query);
         if(query !== undefined) {
             this.query = query;
         }

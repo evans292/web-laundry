@@ -24,6 +24,10 @@
         "vue-template-compiler": "^2.6.10"
     },
     "dependencies": {
+        "@ckeditor/ckeditor5-build-classic": "^23.1.0",
+        "browser-sync": "^2.26.13",
+        "browser-sync-webpack-plugin": "2.0.1",
+        "summernote": "^0.8.18",
         "vue-ios-alertview": "^1.1.2"
     }
 }

@@ -31,7 +31,8 @@
                     <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Role</label>
                     <div class="col-sm-12 col-md-7">
                         <select class="form-control" v-model="role" v-bind:class="{'is-invalid': errors.role}">
-                            <option v-for="role in roles" v-bind:value="role.id">{{ role.name }}</option>
+                            <option  v-if="!$parent.userCan('edit-users')" value="3" selected>Owner</option>
+                            <option  v-if="$parent.userCan('edit-users')" v-for="role in roles" v-bind:value="role.id">{{ role.name }}</option>
                         </select>
                         <div class="invalid-feedback" v-if="errors.role">
                             <p>{{ errors.role[0] }}</p>

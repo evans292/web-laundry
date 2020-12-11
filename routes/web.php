@@ -1,4 +1,7 @@
 <?php
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
+
 Route::get('/', function() {
     return redirect(route('admin.dashboard'));
 });
@@ -16,6 +19,15 @@ Route::name('admin.')->prefix('admin')->middleware('auth')->group(function() {
             'index' => 'users'
         ]
     ]);
+    
+    Route::group(['middleware' => ['can:view-outlets']], function () {
+        //
+        Route::resource('outlets', 'OutletController', [
+            'names' => [
+                'index' => 'outlets'
+            ]
+        ]);
+    }); 
 });
 
 Route::middleware('auth')->get('logout', function() {

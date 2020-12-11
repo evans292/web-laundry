@@ -12,6 +12,13 @@ Vue.component('users-component', UsersComponent);
 Vue.component('profile-component', ProfileComponent);
 Vue.component('adduser-component', AdduserComponent);
 
+import OutletsTableComponent from './components/Outlets/Table';
+import CreateOutletComponent from './components/Outlets/Create';
+import EditOutletComponent from './components/Outlets/Edit';
+Vue.component('tableoutlet-component', OutletsTableComponent);
+Vue.component('createoutlet-component', CreateOutletComponent);
+Vue.component('editoutlet-component', EditOutletComponent);
+
 const app = new Vue({
     el: '#app',
     data() {
