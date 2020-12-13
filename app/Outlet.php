@@ -8,4 +8,9 @@ class Outlet extends Model
 {
     //
     protected $guarded = [];
+
+    public function packages()
+    {
+        return $this->hasMany(Package::class);
+    }
 }

@@ -22,7 +22,7 @@ class UsersTableSeeder extends Seeder
             $adminRole->givePermissionTo($permission);
         }
         $adminUser = User::create([
-            'name' => 'Admin',
+            'name' => 'Fauzy',
             'email' => 'admin@example.com',
             'password' => Hash::make('1234')
         ]);

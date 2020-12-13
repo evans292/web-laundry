@@ -27,6 +27,12 @@ Route::name('admin.')->prefix('admin')->middleware('auth')->group(function() {
                 'index' => 'outlets'
             ]
         ]);
+
+        Route::resource('packages', 'PackageController', [
+            'names' => [
+                'index' => 'packages'
+            ]
+        ]);
     }); 
 });
 

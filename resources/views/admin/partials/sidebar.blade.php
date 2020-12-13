@@ -15,7 +15,7 @@
       @if(Auth::user()->can('view-outlets'))
       <li class="menu-header">Laundry</li>
       <li class="{{ Request::route()->getName() == 'admin.outlets' ? ' active' : '' }}"><a class="nav-link" href="{{ route('admin.outlets') }}"><i class="fa fa-store"></i> <span>Outlets</span></a></li>
-      <li class="{{ Request::route()->getName() == 'admin.packages' ? ' active' : '' }}"><a class="nav-link" href="#"><i class="fa fa-archive"></i> <span>Packages</span></a></li>
+      <li class="{{ Request::route()->getName() == 'admin.packages' ? ' active' : '' }}"><a class="nav-link" href="{{ route('admin.packages') }}"><i class="fa fa-archive"></i> <span>Packages</span></a></li>
       @endif
     </ul>
 </aside>

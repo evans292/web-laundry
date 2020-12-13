@@ -19,6 +19,14 @@ Vue.component('tableoutlet-component', OutletsTableComponent);
 Vue.component('createoutlet-component', CreateOutletComponent);
 Vue.component('editoutlet-component', EditOutletComponent);
 
+import PackagesTableComponent from './components/Packages/Table';
+// import CreateOutletComponent from './components/Outlets/Create';
+// import EditOutletComponent from './components/Outlets/Edit';
+Vue.component('tablepackage-component', PackagesTableComponent);
+// Vue.component('createoutlet-component', CreateOutletComponent);
+// Vue.component('editoutlet-component', EditOutletComponent);
+
+
 const app = new Vue({
     el: '#app',
     data() {
