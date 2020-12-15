@@ -72,9 +72,6 @@ export default {
             this.errors = [],
             this.message = '',
             this.loading = true,
-            console.log(this.nama);
-            console.log(this.alamat);
-            console.log(this.tlp);
              axios.post(this.$parent.MakeUrl('admin/outlets'), this.form).then((res) => {
                 this.loading = false;
                 this.resetForm();

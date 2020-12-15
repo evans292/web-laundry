@@ -15,8 +15,6 @@ class CreatePackagesTable extends Migration
     {
         Schema::create('packages', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('outlet_id');
-            $table->foreign('outlet_id')->references('id')->on('outlets');
             $table->enum('jenis', ['kiloan', 'selimut', 'bed_cover', 'lain']);
             $table->string('nama_paket');
             $table->integer('harga');

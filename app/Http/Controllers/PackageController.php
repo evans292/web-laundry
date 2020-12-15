@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Outlet;
 use App\Package;
 use Illuminate\Http\Request;
 
@@ -35,6 +36,7 @@ class PackageController extends Controller
     public function create()
     {
         //
+        return view('admin.packages.create');
     }
 
     /**
@@ -46,6 +48,21 @@ class PackageController extends Controller
     public function store(Request $request)
     {
         //
+        $request->validate([
+            'outlet_id' => 'required',
+            'jenis' => 'required',
+            'nama_paket' => 'required|max:100',
+            'harga' => 'required|numeric'
+        ]);
+
+        $package = Package::create([
+            'outlet_id' => request('outlet_id'),
+            'jenis' => request('jenis'),
+            'nama_paket' => request('nama_paket'),
+            'harga' => request('harga'),
+        ]);
+
+        return response()->json($package);
     }
 
     /**
@@ -65,9 +82,10 @@ class PackageController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Package $package)
     {
         //
+        return view('admin.packages.edit', compact('package'));
     }
 
     /**
@@ -77,9 +95,24 @@ class PackageController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Package $package)
     {
         //
+        $request->validate([
+            'outlet_id' => 'required',
+            'jenis' => 'required',
+            'nama_paket' => 'required|max:100',
+            'harga' => 'required|numeric'
+        ]);
+
+        $package->update([
+            'outlet_id' => request('outlet_id'),
+            'jenis' => request('jenis'),
+            'nama_paket' => request('nama_paket'),
+            'harga' => request('harga'),
+        ]);
+
+        return response()->json($package);
     }
 
     /**
@@ -88,8 +121,9 @@ class PackageController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Package $package)
     {
         //
+        $package->delete();
     }
 }

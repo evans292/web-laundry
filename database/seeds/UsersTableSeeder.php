@@ -24,7 +24,8 @@ class UsersTableSeeder extends Seeder
         $adminUser = User::create([
             'name' => 'Fauzy',
             'email' => 'admin@example.com',
-            'password' => Hash::make('1234')
+            'password' => Hash::make('1234'),
+            'outlet_id' => 1
         ]);
         $adminUser->assignRole($adminRole);
 
@@ -38,7 +39,8 @@ class UsersTableSeeder extends Seeder
         $editorUser = User::create([
             'name' => 'Kasir',
             'email' => 'kasir@example.com',
-            'password' => Hash::make('1234')
+            'password' => Hash::make('1234'),
+            'outlet_id' => 1
         ]);
         $editorUser->assignRole($kasirRole);
 
@@ -46,7 +48,8 @@ class UsersTableSeeder extends Seeder
         $generalUser = User::create([
             'name' => 'Owner',
             'email' => 'owner@example.com',
-            'password' => Hash::make('1234')
+            'password' => Hash::make('1234'),
+            'outlet_id' => 1
         ]);
         $generalUser->assignRole($userRole);
     }

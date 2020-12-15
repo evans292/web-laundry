@@ -22,12 +22,13 @@ Route::name('admin.')->prefix('admin')->middleware('auth')->group(function() {
     
     Route::group(['middleware' => ['can:view-outlets']], function () {
         //
+        Route::get('outlets/getOutlets', 'OutletController@getOutlets')->name('outlets.roles');
         Route::resource('outlets', 'OutletController', [
             'names' => [
                 'index' => 'outlets'
             ]
         ]);
-
+        
         Route::resource('packages', 'PackageController', [
             'names' => [
                 'index' => 'packages'

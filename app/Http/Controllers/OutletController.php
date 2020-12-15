@@ -114,4 +114,9 @@ class OutletController extends Controller
         //
         $outlet->delete();
     }
+
+    public function getOutlets()
+    {
+        return response()->json(Outlet::get());
+    }
 }

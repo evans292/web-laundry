@@ -7,8 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 class Package extends Model
 {
     //
-    public function outlet()
+    protected $guarded = [];
+
+    public function outlets()
     {
-        return $this->belongsTo(Outlet::class);
+        return $this->belongsToMany(Outlet::class);
     }
 }

@@ -20,11 +20,11 @@ Vue.component('createoutlet-component', CreateOutletComponent);
 Vue.component('editoutlet-component', EditOutletComponent);
 
 import PackagesTableComponent from './components/Packages/Table';
-// import CreateOutletComponent from './components/Outlets/Create';
-// import EditOutletComponent from './components/Outlets/Edit';
+import CreatePackageComponent from './components/Packages/Create';
+import EditPackageComponent from './components/Packages/Edit';
 Vue.component('tablepackage-component', PackagesTableComponent);
-// Vue.component('createoutlet-component', CreateOutletComponent);
-// Vue.component('editoutlet-component', EditOutletComponent);
+Vue.component('createpackage-component', CreatePackageComponent);
+Vue.component('editpackage-component', EditPackageComponent);
 
 
 const app = new Vue({

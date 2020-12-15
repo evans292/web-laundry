@@ -52,4 +52,9 @@ class User extends Authenticatable
         }
         return $res;
     }
+
+    public function outlet()
+    {
+        return $this->belongsTo(Outlet::class);
+    }
 }
